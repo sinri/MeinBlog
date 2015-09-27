@@ -35,12 +35,18 @@ class MeinBlogPDO
 
 	public function getAll($sql){
 		$stmt=$this->pdo->query($sql);
+		if($stmt===false){
+			throw new Exception("STMT GET FALSE FOR SQL: ".$sql, -1);
+		}
 		$rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $rows;
 	}
 
 	public function getRow($sql){
 		$stmt=$this->pdo->query($sql);
+		if($stmt===false){
+			throw new Exception("STMT GET FALSE FOR SQL: ".$sql, -1);
+		}
 		$rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
 		if($rows)
 			return $rows[0];
@@ -50,6 +56,9 @@ class MeinBlogPDO
 	public function getOne($sql){
 		//FETCH_BOTH
 		$stmt=$this->pdo->query($sql);
+		if($stmt===false){
+			throw new Exception("STMT GET FALSE FOR SQL: ".$sql, -1);
+		}
 		$rows=$stmt->fetchAll(PDO::FETCH_BOTH);
 		if($rows){
 			$row = $rows[0];
@@ -97,7 +106,11 @@ class MeinBlogPDO
 	}
 
 	public function quote($string,$parameter_type = PDO::PARAM_STR ){
-		return $this->pdo->quote($string,$parameter_type);
+		if($parameter_type==PDO::PARAM_INT){
+			return intval($string);
+		}else{
+			return $this->pdo->quote($string);
+		}
 	}
 }
 ?>

@@ -17,6 +17,12 @@ class MBFileHeader extends MBBasicModel
 		parent::__construct($fields);
 	}
 
+	function getFileHeader($file_id){
+		$file_id=$this->pdo->quote($file_id,PDO::PARAM_INT);
+		$sql="SELECT * FROM `mb_file_header` WHERE file_id={$file_id} LIMIT 1";
+		return $this->pdo->getRow($sql);
+	}
+
 	function create($title,$main_editor_id,$content,$category_id=0,$abstract=''){
 		if(empty($title) || empty($main_editor_id) || empty($content))return false;
 
@@ -44,6 +50,7 @@ class MBFileHeader extends MBBasicModel
 					NOW()
 				);
 			";
+			MeinBlog::log("create file header sql: ".$sql);
 			$file_id=$this->pdo->insert($sql);
 
 			if(empty($file_id)){
@@ -51,9 +58,9 @@ class MBFileHeader extends MBBasicModel
 			}
 
 			$FC=new MBFileContent();
-			$content_file_id=$FC->create($file_id,$content,$main_editor_id);
+			$afx=$FC->create($file_id,$content,$main_editor_id);
 
-			if(empty($content_file_id)){
+			if(empty($afx)){
 				throw new Exception("Error on creating file content.", 1);
 			}
 
@@ -62,11 +69,13 @@ class MBFileHeader extends MBBasicModel
 			return $file_id;
 		} catch (Exception $e) {
 			$this->pdo->rollBack();
+			MeinBlog::log($e->getMessage());
 		}
 		return false;
 	}
 
 	function update($file_id,$editor_id,$title=false,$abstract=false,$category_id=false,$content=false){
+		MeinBlog::log("update($file_id,$editor_id,$title=false,$abstract=false,$category_id=false,$content=false)");
 		if(empty($file_id) || empty($editor_id))return false;
 		$this->pdo->beginTransaction();
 		try {
@@ -79,17 +88,17 @@ class MBFileHeader extends MBBasicModel
 
 			$sql_set=" update_time=NOW(), main_editor_id = ".$this->pdo->quote($editor_id,PDO::PARAM_INT);
 			if($title!==false){
-				$sql_set.=', title = '.$this->qdo->quote($title);
+				$sql_set.=', title = '.$this->pdo->quote($title);
 			}
 			if($abstract!==false){
 				if($abstract===null){
 					$sql_set.=', abstract = NULL ';
 				}else{
-					$sql_set.=', abstract = '.$this->qdo->quote($abstract);
+					$sql_set.=', abstract = '.$this->pdo->quote($abstract);
 				}
 			}
 			if($category_id!==false){
-				$sql_set.=', category_id = '.$this->qdo->quote($category_id,PDO::PARAM_INT);
+				$sql_set.=', category_id = '.$this->pdo->quote($category_id,PDO::PARAM_INT);
 			}
 			$sql="UPDATE mb_file_header SET {$sql_set} WHERE file_id=".$this->pdo->quote($file_id,PDO::PARAM_INT);
 			$afx=$this->pdo->exec($sql);
@@ -99,8 +108,11 @@ class MBFileHeader extends MBBasicModel
 			}
 			
 			$this->pdo->commit();
+
+			return true;
 		} catch (Exception $e) {
 			$this->pdo->rollBack();
+			MeinBlog::log($e->getMessage());
 		}
 		return false;
 	}

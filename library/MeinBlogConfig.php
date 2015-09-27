@@ -18,13 +18,13 @@ class MeinBlogConfig
 		'db_port'=>'3306',
 		'db_charset'=>'utf8',
 		'db_scheme'=>'MeinBlog',
-		'db_username'=>'Username',
-		'db_password'=>'Password',
+		'db_username'=>'root',
+		'db_password'=>'123456',
 		// Depolyment: level as DEV, TEST, PROD, etc.
 		'deploy_level'=>'DEV',
 	);
 
-	protected function property($name, $value = null) {
+	public function property($name, $value = null) {
         if (func_num_args() > 1) {
             return $this->properties[$name] = $value;
         } else {
@@ -37,7 +37,8 @@ class MeinBlogConfig
     }
 
     public static function getInstance(){
-    	static $instance=new MeinBlogConfig();
+    	static $instance=null;
+    	if($instance==null)$instance=new MeinBlogConfig();
     	return $instance;
     }
 }

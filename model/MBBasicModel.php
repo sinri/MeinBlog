@@ -19,7 +19,7 @@ class MBBasicModel
 		$this->pdo=MeinBlog::getPDO();
 	}
 
-	protected function property($name, $value = null) {
+	public function property($name, $value = null) {
         if (func_num_args() > 1) {
             return $this->properties[$name] = $value;
         } else {

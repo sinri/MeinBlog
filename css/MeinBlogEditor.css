@@ -1,0 +1,66 @@
+#edit_box {
+	width: 100%;
+	margin: 0px auto;
+}
+
+#editor_form {
+	width: 100%;
+	margin: auto;
+} 
+
+input.title_input {
+	width: 40%;
+	margin: 5px;
+	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	padding: 6px 12px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	display: inline-block;
+}
+
+input.new_category_input {
+	width: 15%;
+	margin: 5px;
+	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	padding: 6px 12px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	display: inline-block;
+}
+
+select.category_select {
+	width: 15%;
+	margin: 0px 20px;
+	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	padding: 6px 12px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	display: inline-block;
+}
+
+#editor {
+	width: 90%;
+	height: auto;
+	margin: 5px;
+	resize: none; /* vertical; */
+    min-height: 500px;
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+    overflow: auto;
+}
+
+
+.md {
+	overflow: scroll;
+	border:1px solid;
+	border-radius:5px;
+    min-height: 500px;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
