@@ -2,7 +2,7 @@
 require_once(__DIR__.'/library/MeinBlog.php');
 
 // Start or resume one session 
-session_start();
+$sessionAgent=MeinBlogSession::sharedInstance();
 
 $userAgent=new MBUser();
 $fileListAgent=new MBFileList();
@@ -10,21 +10,14 @@ $fileListAgent=new MBFileList();
 if('login'==MeinBlog::getRequest('act')){
 	$name=MeinBlog::getRequest('name');
 	$password=MeinBlog::getRequest('password');
-	$user_id=$userAgent->authUser($name,md5($password));
-	// MeinBlog::log("Event.Login({$name})->password({$password})={$user_id}");
-	$_SESSION['user_id']=$user_id;
+	$sessionAgent->login($name,$password);
 }elseif('logout'==MeinBlog::getRequest('act')){
-	session_destroy();
+	$sessionAgent->logout();
 	header("location: index.php");
 }
 
-if(empty($_SESSION['user_id'])){
-	$user_id=null;
-}else{
-	$user_id=$_SESSION['user_id'];
-	$user_info=$userAgent->getUser($user_id);
-	// MeinBlog::log("Event.getUser({$user_id})=".json_encode($user_info));
-}
+$user_id=$sessionAgent->getUserId();
+$user_info=$sessionAgent->getUserInfo();
 
 // list top files
 $conditions=array();
@@ -39,6 +32,7 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>MeinBlog</title>
 	<link rel="stylesheet" type="text/css" href="css/github.css">
 	<link rel="stylesheet" type="text/css" href="css/MeinBlogGeneral.css">
@@ -133,17 +127,16 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 						Since: <?php echo $file_header->property('create_time'); ?>
 						&nbsp;&nbsp;
 						Final: <?php echo $file_header->property('update_time'); ?>
+						&nbsp;&nbsp;
+						<?php if($user_info['role']=='ADMIN'){ ?>
+						<span class="btn_span" style="padding: 3px 12px;">
+							<a class="btn" href="FileEdit.php?file_id=<?php echo $file_header->property('file_id'); ?>">Edit</a>
+						</span>
+						<?php } ?>
 					</p>
 					<blockquote class="file_header_abstract">
 						<?php MeinBlog::safeEmptyEcho($file_header->property('abstract'),'No abstract found.'); ?>
 					</blockquote>
-			<?php if($user_info['role']=='ADMIN'){
-			?>
-					<p>
-						<a href="FileEdit.php?file_id=<?php echo $file_header->property('file_id'); ?>">Edit</a>
-					</p>
-			<?php
-			} ?>
 				</div>
 			<?php
 				}

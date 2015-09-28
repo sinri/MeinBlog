@@ -6,11 +6,17 @@
  * Sinri Edogawa 2015-09-24
  */
 
+date_default_timezone_set('Asia/Shanghai');
+
 include_once(__DIR__.'/MeinBlogConfig.php');
 include_once(__DIR__.'/MeinBlogLogger.php');
 include_once(__DIR__.'/MeinBlogPDO.php');
 
-date_default_timezone_set('Asia/Shanghai');
+// Model Classes
+include_once(__DIR__.'/../model/MBAutoload.php');
+
+// Session
+include_once(__DIR__.'/MeinBlogSession.php');
 
 /**
 * 
@@ -63,8 +69,5 @@ class MeinBlog
 		}
 	}
 }
-
-// Model Classes
-include_once(__DIR__.'/../model/MBAutoload.php');
 
 ?>

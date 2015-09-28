@@ -2,7 +2,9 @@
 require_once(__DIR__.'/library/MeinBlog.php');
 
 // Start or resume one session 
-session_start();
+$sessionAgent=MeinBlogSession::sharedInstance();
+$user_id=$sessionAgent->getUserId();
+$user_info=$sessionAgent->getUserInfo();
 
 $file_id="";
 $title="";
@@ -17,13 +19,10 @@ $contentAgent=new MBFileContent();
 
 $message='';
 
-if(empty($_SESSION['user_id'])){
+if(empty($user_id)){
 	$user_id=null;
 	$message="User Session Error";
 }else{
-	$user_id=$_SESSION['user_id'];
-	$user_info=$userAgent->getUser($user_id);
-
 	$file_id=MeinBlog::getRequest('file_id');	
 
 	if('edit'==MeinBlog::getRequest('act')){
@@ -76,14 +75,15 @@ if(empty($_SESSION['user_id'])){
 
 		$content=$contentAgent->getFileContent($file_id);
 	}
-}
 
-$category_list=$categoryAgent->getCategoryList();
+	$category_list=$categoryAgent->getCategoryList();
+}
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>MeinBlog</title>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/marked.js"></script>

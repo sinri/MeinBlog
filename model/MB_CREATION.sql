@@ -26,14 +26,13 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
-CREATE TABLE `MeinBlog`.`mb_file_tag` (
-  `file_id` INT NOT NULL COMMENT '',
-  `tag` VARCHAR(45) NOT NULL COMMENT '',
-  `editor_id` INT NOT NULL COMMENT '',
-  `create_time` DATETIME NOT NULL COMMENT '')
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_bin;
+CREATE TABLE `mb_file_tag` (
+  `file_id` int(11) NOT NULL,
+  `tag` varchar(45) COLLATE utf8_bin NOT NULL,
+  `editor_id` int(11) NOT NULL,
+  `create_time` datetime NOT NULL,
+  UNIQUE KEY `FTE` (`file_id`,`tag`,`editor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 CREATE TABLE `MeinBlog`.`mb_category` (
   `category_id` INT NOT NULL AUTO_INCREMENT COMMENT '',

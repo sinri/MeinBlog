@@ -42,6 +42,21 @@ class MeinBlogPDO
 		return $rows;
 	}
 
+	public function getColumn($sql){
+		$stmt=$this->pdo->query($sql);
+		if($stmt===false){
+			throw new Exception("STMT GET FALSE FOR SQL: ".$sql, -1);
+		}
+		$rows=$stmt->fetchAll(PDO::FETCH_BOTH);
+		$column=array();
+		if($rows){
+			foreach ($rows as $row) {
+				$column[]=$row[0];
+			}
+		}
+		return $column;
+	}
+
 	public function getRow($sql){
 		$stmt=$this->pdo->query($sql);
 		if($stmt===false){

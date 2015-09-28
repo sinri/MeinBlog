@@ -2,7 +2,9 @@
 require_once(__DIR__.'/library/MeinBlog.php');
 
 // Start or resume one session 
-session_start();
+$sessionAgent=MeinBlogSession::sharedInstance();
+$user_id=$sessionAgent->getUserId();
+$user_info=$sessionAgent->getUserInfo();
 
 $message="";
 $user_id="";
@@ -28,7 +30,7 @@ if('user_register'==MeinBlog::getRequest('act')){
 				$message="Failed to create user.";
 			}else{
 				$message="Successfully created user, now directing...";
-				$_SESSION['user_id']=$user_id;
+				$sessionAgent->login($name,$password);
 			}
 		}else{
 			$message="Code is not correct.";
@@ -40,6 +42,7 @@ if('user_register'==MeinBlog::getRequest('act')){
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>MeinBlog</title>
 	<link rel="stylesheet" type="text/css" href="css/MeinBlogGeneral.css">
 </head>

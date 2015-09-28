@@ -16,6 +16,21 @@ class MBCategory extends MBBasicModel
 		return $categoryList;
 	}
 
+	public function getCategoryStatusList(){
+		$sql="SELECT 
+		    c.*,
+		    COUNT(fh.file_id) file_count,
+		    GROUP_CONCAT(fh.file_id
+		        ORDER BY file_id DESC) file_ids
+		FROM
+		    mb_category c
+		        LEFT JOIN
+		    mb_file_header fh ON c.category_id = fh.category_id
+		";
+		$categoryStatusList=$this->pdo->getAll($sql);
+		return $categoryStatusList;
+	}
+
 	public function getCategory($category_id){
 		$sql="SELECT * FROM mb_category WHERE category_id=".$this->pdo->quote($category_id,PDO::PARAM_INT);
 		$category=$this->pdo->getRow($sql);

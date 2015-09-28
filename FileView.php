@@ -3,24 +3,27 @@ require_once(__DIR__.'/library/MeinBlog.php');
 require_once(__DIR__.'/library/Parsedown.php');
 
 // Start or resume one session 
-session_start();
+$sessionAgent=MeinBlogSession::sharedInstance();
+$user_id=$sessionAgent->getUserId();
+$user_info=$sessionAgent->getUserInfo();
 
 $userAgent=new MBUser();
 $fileAgent=new MBFileHeader();
 $contentAgent=new MBFileContent();
+$tagAgent=new MBFileTag();
 
 $file_id=MeinBlog::getRequest('file_id');
-
-if(empty($_SESSION['user_id'])){
-	$user_id=null;
-}else{
-	$user_id=$_SESSION['user_id'];
-	$user_info=$userAgent->getUser($user_id);
-}
 
 if(!empty($file_id)){
 	$header=$fileAgent->getFileHeader($file_id);
 	if($header){
+		if(MeinBlog::getRequest('act')=='add_tag'){
+			$tag=MeinBlog::getRequest('tag');
+			if(!empty($tag)){
+				$tagAgent->createTagForFile($file_id,$tag,$user_id);
+			}
+		}
+
 		$title=$header['title'];
 		$abstract=$header['abstract'];
 		$category=$header['category_id'];
@@ -29,6 +32,8 @@ if(!empty($file_id)){
 
 		$first_edition_time=$header['create_time'];
 		$last_edition_time=$header['update_time'];
+
+		$tags=$tagAgent->getTagsForFile($file_id);
 
 		$writer_info=$userAgent->getUser($editor_id);
 	}else{
@@ -40,6 +45,7 @@ if(!empty($file_id)){
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>MeinBlog</title>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/marked.js"></script>
@@ -78,6 +84,9 @@ if(!empty($file_id)){
 	#content_div {
 		min-height: 400px;
 	}
+	#tag_div {
+		border-top: 1px solid lightgray;
+	}
 	</style>
 </head>
 <body>
@@ -92,6 +101,27 @@ if(!empty($file_id)){
 				$ParsedownInstance=Parsedown::instance();
 				echo $ParsedownInstance->text($content);
 				?>
+			</div>
+			<div id="tag_div">
+				<div style="float:left;width: 70%;height:30px;line-height:30px;overflow:auto;">
+				<?php if(!empty($tags)){
+					foreach ($tags as $tag => $tag_count) {
+						echo "<code style='color:".$color."'>";
+						echo $tag;
+						echo " ×".$tag_count;
+						echo "</code> &nbsp; ";
+					}
+				} ?>
+				</div>
+				<div style="float:right;width: 25%;display:table;height:30px;">
+					<form method="POST" style="margin:auto 0px;display:table-cell;vertical-align:middle;">
+						Add Tag:
+						<input type="hidden" name="act" value="add_tag">
+						<input type="hidden" name="file_id" value="<?php echo $file_id; ?>">
+						<input type="text" name="tag" style="height:10px;width:60px;font-size:12px;border-radius:0px;margin:0px;vertical-align:baseline;">
+						<button>Submit</button>
+					</form>
+				</div>
 			</div>
 		</div>
 		<div class="right_div">
