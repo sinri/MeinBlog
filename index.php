@@ -128,7 +128,7 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 						&nbsp;&nbsp;
 						Final: <?php echo $file_header->property('update_time'); ?>
 						&nbsp;&nbsp;
-						<?php if($user_info['role']=='ADMIN'){ ?>
+						<?php if($user_info['role']=='ADMIN' || $user_id==$file_header->property('main_editor_id')){ ?>
 						<span class="btn_span" style="padding: 3px 12px;">
 							<a class="btn" href="FileEdit.php?file_id=<?php echo $file_header->property('file_id'); ?>">Edit</a>
 						</span>

@@ -11,6 +11,7 @@ $userAgent=new MBUser();
 $fileAgent=new MBFileHeader();
 $contentAgent=new MBFileContent();
 $tagAgent=new MBFileTag();
+$commentAgent=new MBFileComment();
 
 $file_id=MeinBlog::getRequest('file_id');
 
@@ -21,6 +22,12 @@ if(!empty($file_id)){
 			$tag=MeinBlog::getRequest('tag');
 			if(!empty($tag)){
 				$tagAgent->createTagForFile($file_id,$tag,$user_id);
+			}
+		}elseif(MeinBlog::getRequest('act')=='new_comment'){
+			$to_comment_id=MeinBlog::getRequest('to_comment_id',0);
+			$content=MeinBlog::getRequest('content');
+			if(!empty($content)){
+				$commentAgent->createComment($file_id,$user_id,$content,$to_comment_id);
 			}
 		}
 
@@ -34,6 +41,7 @@ if(!empty($file_id)){
 		$last_edition_time=$header['update_time'];
 
 		$tags=$tagAgent->getTagsForFile($file_id);
+		$comments=$commentAgent->getCommentsOfFile($file_id);
 
 		$writer_info=$userAgent->getUser($editor_id);
 	}else{
@@ -62,7 +70,7 @@ if(!empty($file_id)){
 	<style type="text/css">
 	div.left_div {
 		margin: 5px;
-		width: 80%;
+		width: 75%;
 		height: auto;
 		min-height: 500px;
 		float: left;
@@ -71,7 +79,7 @@ if(!empty($file_id)){
 	div.right_div {
 		margin: 0px;
 		padding: 0px;
-		width: 18%;
+		width: 23%;
 		height: auto;
 		min-height: 500px;
 		float: right;
@@ -85,7 +93,30 @@ if(!empty($file_id)){
 		min-height: 400px;
 	}
 	#tag_div {
-		border-top: 1px solid lightgray;
+		height: auto;
+		/*border-top: 1px solid lightgray;*/
+		border-bottom: 1px solid lightgray;
+	}
+	#comment_div {
+		height: auto;
+	}
+	div.comment_row{
+		height: auto;
+		width: 90%;
+		margin: 0px;
+		border-bottom: 1px solid lightgray;
+	}
+	#new_comment_div {
+		height: auto;
+		width: 90%;
+		margin: 0px;
+		padding: 10px 0;
+		/*border-top: 1px solid lightgray;*/
+	}
+	#new_comment_div textarea {
+		width: 90%;
+		height: 40px;
+		padding: 10px;
 	}
 	</style>
 </head>
@@ -102,27 +133,69 @@ if(!empty($file_id)){
 				echo $ParsedownInstance->text($content);
 				?>
 			</div>
-			<div id="tag_div">
-				<div style="float:left;width: 70%;height:30px;line-height:30px;overflow:auto;">
-				<?php if(!empty($tags)){
-					foreach ($tags as $tag => $tag_count) {
-						echo "<code style='color:".$color."'>";
-						echo $tag;
-						echo " ×".$tag_count;
-						echo "</code> &nbsp; ";
+			<div id="comment_div">
+				<div class="comment_row">
+					<h2>Comments</h2>
+				</div>
+				<?php if(!empty($comments)){
+					foreach ($comments as $comment) {
+				?>
+				<div class="comment_row" id="comment_row_for_id_<?php echo $comment['comment_id']; ?>">
+					<p>
+						[#<?php echo $comment['comment_id']; ?>]
+						<?php echo $comment['name']; ?> commented
+						<?php if(empty($comment['to_comment_id'])){
+							echo "this file";
+						} else{
+							echo "<a href='#comment_row_for_id_".$comment['to_comment_id']."'>[#".$comment['to_comment_id']."]</a>";
+						} ?>
+						on <?php echo $comment['create_time']; ?>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<?php if(!empty($user_id)){ ?>
+						<span class="btn_span"><a href="#new_comment_form" class="btn" onclick="requireReplyComment('<?php echo $comment['comment_id']; ?>');">Reply</a></span>
+						<?php } ?>
+					</p>
+					<p>
+						<?php echo $comment['content']; ?>
+					</p>
+				</div>
+				<?php
 					}
 				} ?>
-				</div>
-				<div style="float:right;width: 25%;display:table;height:30px;">
-					<form method="POST" style="margin:auto 0px;display:table-cell;vertical-align:middle;">
-						Add Tag:
-						<input type="hidden" name="act" value="add_tag">
-						<input type="hidden" name="file_id" value="<?php echo $file_id; ?>">
-						<input type="text" name="tag" style="height:10px;width:60px;font-size:12px;border-radius:0px;margin:0px;vertical-align:baseline;">
-						<button>Submit</button>
-					</form>
-				</div>
 			</div>
+			<?php if(!empty($user_id)){ ?>
+			<div id="new_comment_div">
+				<form method="POST" id="new_comment_form">
+					<div>
+						<h3>Write Comment</h3>
+						<div style="margin: 5px 0px;">
+							<span id="to_comment_target">Comment this file with Markdown format content.</span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<!-- <button>Submit</button> -->
+							<span class="btn_span">
+								<a href="javascript:void(0);" class="btn" onclick="$('#new_comment_form').submit();">Submit</a>
+							</span>
+							<input type="hidden" name="to_comment_id" id="to_comment_id_input" value="0">
+						</div>
+					</div>
+					<div>
+						<input type="hidden" name="act" value="new_comment">
+						<input type="hidden" name="file_id" value="<?php echo $file_id; ?>">
+						<textarea name="content" placeholder="Comment here"></textarea>
+					</div>
+				</form>
+				<script type="text/javascript">
+				function requireReplyComment(origin_comment_id){
+					$("#to_comment_id_input").val(origin_comment_id);
+					if(origin_comment_id!=0){
+						$("#to_comment_target").html('Comment [#'+origin_comment_id+'] with Markdown format content. <a href="javascript:void(0);" onclick="requireReplyComment(0)">I would rather comment the file.</a>');
+					}else{
+						$("#to_comment_target").html('Comment this file with Markdown format content.');
+					}
+				}
+				</script>
+			</div>
+			<?php } ?>
 		</div>
 		<div class="right_div">
 			<h2>File Info</h2>
@@ -130,8 +203,39 @@ if(!empty($file_id)){
 			<p>Email: <?php echo $writer_info['email']; ?></p>
 			<p>Since: <?php echo $first_edition_time; ?></p>
 			<p>Final: <?php echo $last_edition_time; ?></p>
+
+			<?php if($user_info['role']=='ADMIN' || $user_id==$editor_id){ ?>
+				<p><span class="btn_span"><a href="FileEdit.php?file_id=<?php echo $file_id; ?>" class="btn btn-full-width">Edit</a></span></p>
+			<?php } ?>
+
+			<h2>Tags</h2>
+			<p>
+			<?php if(!empty($tags)){
+				foreach ($tags as $tag => $tag_count) {
+					echo "<code style='color:".$color."'>";
+					echo $tag;
+					echo " ×".$tag_count;
+					echo "</code> &nbsp; ";
+				}
+			} ?>
+			</p>
+			<div style="height:30px;margin:10px 0px;">
+				<form method="POST" style="margin:auto 0px;display:table-cell;vertical-align:middle;" id="new_tag_form">
+					New:
+					<input type="hidden" name="act" value="add_tag">
+					<input type="hidden" name="file_id" value="<?php echo $file_id; ?>">
+					<input type="text" name="tag" placeholder="Tag" style="height:15px;width:100px;font-size:12px;border-radius:0px;margin:0px;vertical-align:baseline;border: none;background-color: #f8f8f8;">
+					<span class="btn_span">
+						<a href="javascript:void(0);" class="btn" onclick="$('#new_tag_form').submit();">Add</a>
+					</span>
+					<!-- <button>Submit</button> -->
+				</form>
+
+			</div>
+
 			<h2>Links</h2>
-			<a href="index.php">Home</a>
+			<p><span class="btn_span"><a href="index.php" class="btn btn-full-width">Home</a></span></p>
+
 		</div>
 		<div class="clear"></div>
 	</div>
