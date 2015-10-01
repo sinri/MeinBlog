@@ -47,7 +47,9 @@ class MBFileTag extends MBBasicModel
 				NOW()
 			)
 		";
+		// MeinBlog::log("MBFileTag.createTagForFile($file_id,$tag,$editor_id).sql=".$sql);
 		$afx=$this->pdo->exec($sql);
+		// MeinBlog::log("MBFileTag.createTagForFile.exec=".$afx);
 		return $afx;
 	}
 }

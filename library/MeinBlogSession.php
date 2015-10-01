@@ -26,9 +26,15 @@ class MeinBlogSession
 	// Refresh
 
 	public function login($name,$password){
-		$this->user_id=$this->getUserAgent()->authUser($name,md5($password));
-		// MeinBlog::log("Event.Login({$name})->password({$password})={$user_id}");
+		$user_id=$this->getUserAgent()->authUser($name,md5($password));
+		MeinBlog::log("Event.Login({$name})->password({$password})={$user_id}");
 		$_SESSION['user_id']=$user_id;
+		if(!empty($_SESSION['user_id'])){
+			$this->refreshSession();
+			return $this->getUserId();
+		}else{
+			return false;
+		}
 	}
 
 	public function logout(){
@@ -36,7 +42,10 @@ class MeinBlogSession
 	}
 
 	public function refreshSession(){
-		session_start();
+		// if(session_status()!=PHP_SESSION_ACTIVE){
+			session_start();
+		// }
+		MeinBlog::log('refreshSession: '.json_encode($_SESSION));
 		if(empty($_SESSION['user_id'])){
 			$this->user_id=null;
 			$this->user_info=null;

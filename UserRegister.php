@@ -24,7 +24,8 @@ if('user_register'==MeinBlog::getRequest('act')){
 		$message="Please fulfill all required fields.";
 	}else{
 		$userAgent=new MBUser();
-		if($userAgent->authEmailAndCode($email,$code)){
+		$role=$userAgent->authEmailAndCode($email,$code);
+		if($role){
 			$user_id=$userAgent->create($name,$email,$role,md5($password));
 			if(empty($user_id)){
 				$message="Failed to create user.";

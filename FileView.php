@@ -23,12 +23,14 @@ if(!empty($file_id)){
 			if(!empty($tag)){
 				$tagAgent->createTagForFile($file_id,$tag,$user_id);
 			}
+			header("location: FileView.php?file_id=".$file_id);
 		}elseif(MeinBlog::getRequest('act')=='new_comment'){
 			$to_comment_id=MeinBlog::getRequest('to_comment_id',0);
 			$content=MeinBlog::getRequest('content');
 			if(!empty($content)){
 				$commentAgent->createComment($file_id,$user_id,$content,$to_comment_id);
 			}
+			header("location: FileView.php?file_id=".$file_id);
 		}
 
 		$title=$header['title'];
@@ -163,7 +165,7 @@ if(!empty($file_id)){
 					}
 				} ?>
 			</div>
-			<?php if(!empty($user_id)){ ?>
+			<?php if(!empty($user_id) && $user_info['role']!='OUTSIDER'){ ?>
 			<div id="new_comment_div">
 				<form method="POST" id="new_comment_form">
 					<div>
@@ -212,26 +214,33 @@ if(!empty($file_id)){
 			<p>
 			<?php if(!empty($tags)){
 				foreach ($tags as $tag => $tag_count) {
-					echo "<code style='color:".$color."'>";
+					echo "<a href='javascript:void(0);' style='text-decoration:none;' title='Click to agree' onclick='agreeTag(\"".$tag."\")'>";
+					echo "<code>";
 					echo $tag;
 					echo " ×".$tag_count;
-					echo "</code> &nbsp; ";
+					echo "</code></a> &nbsp; ";
 				}
 			} ?>
+			<script type="text/javascript">
+			function agreeTag(tag){
+				$("#new_tag_input").val(tag);
+				$("#new_tag_form").submit();
+			}
+			</script>
 			</p>
+			<?php if(!empty($user_id) && $user_info['role']!='OUTSIDER'){ ?>
 			<div style="height:30px;margin:10px 0px;">
 				<form method="POST" style="margin:auto 0px;display:table-cell;vertical-align:middle;" id="new_tag_form">
 					New:
 					<input type="hidden" name="act" value="add_tag">
 					<input type="hidden" name="file_id" value="<?php echo $file_id; ?>">
-					<input type="text" name="tag" placeholder="Tag" style="height:15px;width:100px;font-size:12px;border-radius:0px;margin:0px;vertical-align:baseline;border: none;background-color: #f8f8f8;">
+					<input type="text" id="new_tag_input" name="tag" placeholder="Tag" style="height:15px;width:100px;font-size:12px;border-radius:0px;margin:0px;vertical-align:baseline;border: none;background-color: #f8f8f8;">
 					<span class="btn_span">
 						<a href="javascript:void(0);" class="btn" onclick="$('#new_tag_form').submit();">Add</a>
 					</span>
-					<!-- <button>Submit</button> -->
 				</form>
-
 			</div>
+			<?php } ?>
 
 			<h2>Links</h2>
 			<p><span class="btn_span"><a href="index.php" class="btn btn-full-width">Home</a></span></p>

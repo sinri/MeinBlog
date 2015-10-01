@@ -230,10 +230,11 @@ if($user_id && $user_info){
 					}
 				} 
 			?>
+			<div class="clear"></div>
 		</div>
 		<div class="right_div">
 			<h2>Links</h2>
-			<a href="index.php">Home</a>
+			<span class="btn_span"><a class="btn btn-full-width" href="index.php">Home</a></span>
 		</div>
 		<div class="clear"></div>
 	</div>

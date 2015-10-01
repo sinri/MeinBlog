@@ -142,13 +142,13 @@ if(empty($user_id)){
 		<h1>MeinBlog<br><small>A Simple Blog System in PHP</small></h1>
 	</div>
 	<div id="middle">
-		<?php if(empty($user_id)){ ?>
+		<?php if(empty($user_id) || !($user_info['role'] == 'ADMIN' || $user_info['role'] == 'USER') ){ ?>
 		<div class="message_box">
 			<h3>
 				Message:
 			</h3>
 			<p>
-				You have not logined into MeinBlog. Now directing to login...
+				You have not logined into MeinBlog, or you are not in User or Admin Group. Now directing to homepage in 3 seconds.
 			</p>
 			<script type="text/javascript">
 			function jump(){

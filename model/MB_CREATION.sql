@@ -69,3 +69,33 @@ CREATE TABLE `MeinBlog`.`mb_file_comment` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
+
+CREATE TABLE `mb_register_code` (
+  `rc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `object` varchar(45) COLLATE utf8_bin NOT NULL DEFAULT 'ANY' COMMENT 'Email or ANY',
+  `code` varchar(45) COLLATE utf8_bin NOT NULL,
+  `role` enum('ADMIN','USER','GUEST','OUTSIDER') COLLATE utf8_bin NOT NULL DEFAULT 'GUEST',
+  `start_time` datetime DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`rc_id`),
+  UNIQUE KEY `code_UNIQUE` (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `MeinBlog`.`mb_user`
+(
+`user_id`,
+`name`,
+`password`,
+`email`,
+`role`,
+`create_time`
+)
+VALUES
+(1,
+'ADMIN',
+'e10adc3949ba59abbe56e057f20f883e',
+'admin@example.com',
+'ADMIN',
+NOW()
+);
+

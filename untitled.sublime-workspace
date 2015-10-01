@@ -1,0 +1,1508 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"a"
+			],
+			[
+				"to",
+				"to_comment_target"
+			],
+			[
+				"fil",
+				"file_header"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"tex",
+				"textarea"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"com",
+				"comment"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"tag",
+				"tag_count"
+			],
+			[
+				"use",
+				"user_id"
+			],
+			[
+				"em",
+				"empty"
+			],
+			[
+				"ta",
+				"tagAgent"
+			],
+			[
+				"ses",
+				"sessionAgent"
+			],
+			[
+				"Mei",
+				"MeinBlog"
+			],
+			[
+				"inc",
+				"include_once"
+			],
+			[
+				"is",
+				"isAdmin"
+			],
+			[
+				"cate",
+				"Category"
+			],
+			[
+				"cat",
+				"category_status_list"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"ca",
+				"category_status_list"
+			],
+			[
+				"samp",
+				"sample_file_header"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"Catego",
+				"category_name"
+			],
+			[
+				"th",
+				"thead"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"getCate",
+				"getCategoryList"
+			],
+			[
+				"ms",
+				"Message"
+			],
+			[
+				"us",
+				"user_info"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"page",
+				"page_id"
+			],
+			[
+				"new",
+				"new_category"
+			],
+			[
+				"new_",
+				"new_category"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"ab",
+				"abstract"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"Abs",
+				"abstract"
+			],
+			[
+				"defa",
+				"default_for_empty"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"fi",
+				"file_header"
+			],
+			[
+				"tit",
+				"title_div"
+			],
+			[
+				"pa",
+				"parameter_type"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"Pa",
+				"ParsedownInstance"
+			],
+			[
+				"st",
+				"style"
+			],
+			[
+				"edit",
+				"editor_div"
+			],
+			[
+				"head",
+				"header"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"w",
+				"word"
+			],
+			[
+				"lo",
+				"log_file"
+			],
+			[
+				"Mein",
+				"MeinBlog"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"u",
+				"userAgent"
+			],
+			[
+				"create",
+				"create_time"
+			],
+			[
+				"so",
+				"sort"
+			],
+			[
+				"pas",
+				"password"
+			],
+			[
+				"sql",
+				"sql_open_level"
+			],
+			[
+				"main",
+				"main_editor_id"
+			],
+			[
+				"update",
+				"update_time"
+			],
+			[
+				"file",
+				"file_id"
+			],
+			[
+				"quo",
+				"quote"
+			],
+			[
+				"qu",
+				"quote"
+			],
+			[
+				"is_a",
+				"is_array"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"Me",
+				"MeinBlogPDO"
+			],
+			[
+				"glo",
+				"global"
+			],
+			[
+				"de",
+				"deploy_level"
+			],
+			[
+				"prop",
+				"property"
+			],
+			[
+				"sum",
+				"sum_new_count"
+			],
+			[
+				"proce",
+				"process_compare"
+			],
+			[
+				"list",
+				"list_new"
+			],
+			[
+				"lis",
+				"list_new"
+			],
+			[
+				"trac",
+				"tracking_numbers"
+			],
+			[
+				"tra",
+				"tracking_numbers"
+			],
+			[
+				"eog",
+				"eog_i"
+			],
+			[
+				"tn",
+				"tn_i"
+			],
+			[
+				"rec",
+				"record"
+			],
+			[
+				"sto",
+				"stog_oids"
+			],
+			[
+				"upda",
+				"update_time"
+			],
+			[
+				"ut",
+				"utso_time_0"
+			],
+			[
+				"mic",
+				"microtime_float"
+			],
+			[
+				"html",
+				"html_item"
+			],
+			[
+				"ok",
+				"ok_item"
+			],
+			[
+				"ship",
+				"shipping_id"
+			],
+			[
+				"dif",
+				"diff"
+			],
+			[
+				"tim",
+				"time_start"
+			],
+			[
+				"time",
+				"time_end"
+			],
+			[
+				"old",
+				"old_mapping_id"
+			],
+			[
+				"mp",
+				"mp_taobao_order_sn"
+			],
+			[
+				"order",
+				"order_id"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"par",
+				"party"
+			],
+			[
+				"null",
+				"NULL"
+			],
+			[
+				"app",
+				"application_key"
+			],
+			[
+				"mp_",
+				"mp_taobao_order_sn"
+			],
+			[
+				"sin",
+				"sinri_log"
+			],
+			[
+				"iss",
+				"issues"
+			],
+			[
+				"sen",
+				"send_alert_mail"
+			],
+			[
+				"sub",
+				"sub_tid"
+			],
+			[
+				"update_jd_order_mapping_r",
+				"update_jd_order_mapping_result_new"
+			],
+			[
+				"done",
+				"done_list"
+			],
+			[
+				"pure",
+				"pure_taobao_order_sn"
+			],
+			[
+				"pu",
+				"pure_taobao_order_sn"
+			],
+			[
+				"re",
+				"records"
+			],
+			[
+				"fin",
+				"findPureRecords"
+			],
+			[
+				"part",
+				"party_limit"
+			],
+			[
+				"p",
+				"party"
+			],
+			[
+				"sika",
+				"sika_id"
+			],
+			[
+				"fu",
+				"full_proxy"
+			],
+			[
+				"fr",
+				"from_dir"
+			],
+			[
+				"max",
+				"max_depth_in"
+			],
+			[
+				"TOT_",
+				"TOT_ONE"
+			],
+			[
+				"sta",
+				"stat_count"
+			],
+			[
+				"whi",
+				"white_cond"
+			],
+			[
+				"bl",
+				"black_cond"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"pre",
+				"preg_split"
+			],
+			[
+				"chang",
+				"changeBlackSites"
+			],
+			[
+				"conf",
+				"config_file"
+			],
+			[
+				"au",
+				"autoproxy_proxy"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"pac",
+				"pac_file"
+			],
+			[
+				"put",
+				"putList"
+			],
+			[
+				"is_",
+				"is_array"
+			],
+			[
+				"array_m",
+				"array_merge"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "CategoryAgency.php",
+			"settings":
+			{
+				"buffer_size": 7022,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "FileEdit.php",
+			"settings":
+			{
+				"buffer_size": 7310,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/MeinBlogGeneral.css",
+			"settings":
+			{
+				"buffer_size": 4099,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/MBCategory.php",
+			"settings":
+			{
+				"buffer_size": 2041,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "library/MeinBlogSession.php",
+			"settings":
+			{
+				"buffer_size": 1191,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "library/MeinBlog.php",
+			"settings":
+			{
+				"buffer_size": 1549,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 5803,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "FileView.php",
+			"settings":
+			{
+				"buffer_size": 7258,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "UserRegister.php",
+			"settings":
+			{
+				"buffer_size": 2736,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/Pager.css",
+			"settings":
+			{
+				"buffer_size": 4479,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/MBFileTag.php",
+			"settings":
+			{
+				"buffer_size": 963,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/MB_CREATION.sql",
+			"settings":
+			{
+				"buffer_size": 2547,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "library/MeinBlogPDO.php",
+			"settings":
+			{
+				"buffer_size": 2756,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/MBFileComment.php",
+			"settings":
+			{
+				"buffer_size": 1262,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/php_build.sublime-build",
+	"command_palette":
+	{
+		"height": 107.0,
+		"selected_items":
+		[
+			[
+				"Package Control: en",
+				"Package Control: Enable Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"ina",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/.gitignore",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/css/Pager.css",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/FileView.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/css/github.css",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/css/MeinBlogEditor.css",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/FileEdit.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/log/20150926.log",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/library/MeinBlogLogger.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/UserRegister.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MBUser.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MBCategory.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/css/MeinBlogGeneral.css",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/index.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MB_CREATION.sql",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MBFileList.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MBAutoload.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MBBasicModel.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MBFileHeader.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/model/MBFileContent.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/README.md",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/library/MeinBlog.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/library/MeinBlogPDO.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/library/MeinBlogConfig.php",
+		"/Users/Sinri/Codes/Leqee/erpbrand/admin/app.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/includes/lib_sinri_DealPrint.php",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/js/marked.js",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/js/jquery.min.js",
+		"/Users/Sinri/Codes/WebProjects/MeinBlog/js/highlight.pack.js",
+		"/Users/Sinri/Codes/Leqee/weishop/weishop_mobile/toolkit/log_.php",
+		"/Users/Sinri/Codes/SiteOnNetCn/include/news_function.php",
+		"/Users/Sinri/OneDrive/Leqee/LeqeeServers.md",
+		"/Users/Sinri/Desktop/sinri_proxy_pac",
+		"/Users/Sinri/Codes/WebProjects/freedom/pac/sinri_proxy.pac",
+		"/Users/Sinri/Codes/WebProjects/freedom/pac/config.json",
+		"/Users/Sinri/Codes/WebProjects/freedom/pac/blackhole_list.json",
+		"/Users/Sinri/Codes/WebProjects/freedom/pac/autoproxy_list.json",
+		"/Users/Sinri/Codes/WebProjects/freedom/pac/index.php",
+		"/Library/WebServer/Documents/sinri_proxy.pac",
+		"/Users/Sinri/sinri_proxy.pac",
+		"/Users/Sinri/Codes/Leqee/2015TJSE/2.log",
+		"/Users/Sinri/Codes/Leqee/2015TJSE/1.log",
+		"/Users/Sinri/Codes/WebProjects/chat/ukanokan/index.php",
+		"/Users/Sinri/Codes/WebProjects/chat/ukanokan/Hymn/index.php",
+		"/Users/Sinri/Codes/WebProjects/freedom/jacob/index.php",
+		"/Users/Sinri/Codes/WebProjects/freedom/SinriYTB/GoogleApiClientPather.php",
+		"/Users/Sinri/Codes/WebProjects/google-api-php-client/autoload.php",
+		"/Users/Sinri/Codes/SiteOnNetCn/lab/tripper/index.html",
+		"/Users/Sinri/Codes/SiteOnNetCn/lab/tripper/1.php",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/AutoConfirmOrdersCommand.php",
+		"/Users/Sinri/Codes/WebProjects/freedom/includes/mail.php",
+		"/Users/Sinri/Codes/Leqee/tmp/leqee_express_test.php",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/AutoWyethOrdersCommand.php",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/AutoSynThermalOrderCommand.php",
+		"/Users/Sinri/Codes/Leqee/tmp/SinriSight.php",
+		"/Users/Sinri/Codes/Leqee/tmp/SinriSight.c",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/JdSyncCommand.php",
+		"/Users/Sinri/Codes/WebProjects/freedom/lab/cgiproxy.2.1.14/nph-proxy.cgi",
+		"/Users/Sinri/Codes/Leqee/erp/admin/toolkit.php",
+		"/Users/Sinri/Codes/WebProjects/freedom/gugure/index.php",
+		"/Users/Sinri/Codes/WebProjects/freedom/includes/freedom_download_duty_agent.php",
+		"/Users/Sinri/Codes/Leqee/erpbrand/bwshop/config/database.php",
+		"/Users/Sinri/Codes/Leqee/erpbrand/bwshop/zzworker/SinriPDO.php",
+		"/Users/Sinri/Codes/WebProjects/chat/jacob/index.php",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/LockedCommand.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/function.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/batchDisOrder.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/includes/Classes/PHPExcel/Worksheet.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/includes/Classes/PHPExcel/Worksheet/CellIterator.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/includes/Classes/PHPExcel/Worksheet/Row.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/SinriTest/excel_checker.php",
+		"/Users/Sinri/Codes/SiteOnNetCn/index.php",
+		"/Users/Sinri/Codes/WebProjects/chat/ukanokan/TheTrailOfBlood/index.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/PartyXTelephone.php",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/ErpSyncTaobaoCommand.php",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/ErpSyncTaobaoDeliveryCommand.php",
+		"/Users/Sinri/Codes/WebProjects/chat/brainfucker/BrainfuckCompiler.php",
+		"/Users/Sinri/Codes/WebProjects/chat/prayer/sousa.php",
+		"/Users/Sinri/Codes/Leqee/weishop/weishop_admin/application/views/upyun_demo.php",
+		"/Users/Sinri/Codes/Leqee/weishop/weishop_admin/application/controllers/Upyun.php",
+		"/Users/Sinri/Codes/Leqee/erp/admin/SinriTest/server_monitor.php",
+		"/Users/Sinri/Codes/WebProjects/chat/brainfucker/index.php",
+		"/Users/Sinri/Codes/C/Brainfuck/Brainfuck.c",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/slow_sql_0819_over200sec.log",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/slow_sql_0819_over100sec.log",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/slow_sql_150819_top_100.log",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/slow_sql_150819_top_100_sortqtmax.log",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/myprofi.php",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/slow_sql_0819_over50sec.log",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/slow_sql_loger.php",
+		"/Users/Sinri/Desktop/babynesCarrierCheck.csv",
+		"/Users/Sinri/Codes/web_sdk/BrainfuckCompiler.php",
+		"/Users/Sinri/Codes/Leqee/slow_sql_log/slow_sql_over_50s.log",
+		"/Users/Sinri/Codes/Leqee/tmp/h5c.html",
+		"/Users/Sinri/Codes/WebProjects/sinri.tk/StringLD/StringLDSamilarity.php",
+		"/Users/Sinri/Desktop/1.txt",
+		"/Users/Sinri/Library/Developer/CoreSimulator/Devices/42F3F3A0-33CD-4361-84BC-B64BA210EBF5/data/Containers/Data/Application/B91DC344-5279-443F-98E4-F8F368CB4369/Library/Caches/Cache/ls_location",
+		"/Users/Sinri/Library/Developer/CoreSimulator/Devices/42F3F3A0-33CD-4361-84BC-B64BA210EBF5/data/Containers/Data/Application/5C8C57A0-A141-42EF-A2FC-476AD0DDE717/Library/Caches/Cache/ls_location",
+		"/Users/Sinri/Library/Developer/CoreSimulator/Devices/42F3F3A0-33CD-4361-84BC-B64BA210EBF5/data/Containers/Data/Application/71F2CBE6-F8BA-40B8-B729-3EFBDAB05B13/Library/Caches/Cache/ls_location",
+		"/Users/Sinri/Library/Developer/CoreSimulator/Devices/42F3F3A0-33CD-4361-84BC-B64BA210EBF5/data/Containers/Data/Application/25F72988-62D4-4DBD-A001-9A7D7D022599/Library/Caches/Cache/ls_location",
+		"/Users/Sinri/Library/Developer/CoreSimulator/Devices/42F3F3A0-33CD-4361-84BC-B64BA210EBF5/data/Containers/Data/Application/73F809C7-B64A-40FA-8935-4F8A51DCD599/Documents/all/all.json",
+		"/Users/Sinri/Library/Developer/CoreSimulator/Devices/42F3F3A0-33CD-4361-84BC-B64BA210EBF5/data/Containers/Data/Application/FB1737CF-2902-4C79-BEB0-C9E93304A68B/Documents/all/all.json",
+		"/Users/Sinri/Library/Developer/CoreSimulator/Devices/42F3F3A0-33CD-4361-84BC-B64BA210EBF5/data/Containers/Data/Application/73F809C7-B64A-40FA-8935-4F8A51DCD599/Library/Caches/Cache/pdt_classify",
+		"/Users/Sinri/Codes/SiteOnNetCn/Bible/senhonsika/index.php",
+		"/Users/Sinri/Codes/WebProjects/chat/www.jonahome.net/files/nee/01/chapter01.html",
+		"/Users/Sinri/Codes/WebProjects/chat/prayer/list.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/model/OrderReturnModel.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/config/error_config.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/erpAgent.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/bw2erpAgent.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/model/OrderRefundModel.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/controller_api/Returns.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/controller_api/Refund.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/define_route_api.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/controller_api/Order.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/xmltest.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/test.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/ZZXML.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/SinriPDO.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/zzQueryAgent.php",
+		"/Users/Sinri/Codes/Leqee/erp/protected/commands/BWShopRMACommand.php",
+		"/Library/WebServer/Documents/info.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/zzworker/zzApplyAgent.php",
+		"/Users/Sinri/Codes/Leqee/bonded_warehouse/test/api_tester.php",
+		"/Users/Sinri/Codes/Leqee/erp/data/master_config.php",
+		"/Library/WebServer/Documents/phptest.php",
+		"/Users/Sinri/Codes/clisp/l1.lis",
+		"/Users/Sinri/Desktop/nestle_client_UA.csv",
+		"/Users/Sinri/Codes/WebProjects/freedom/VpnMobileConfigStudio/index.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<open folders>",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_mobile/szlbmy",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_mobile/nestle/",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_mobile/nestle/tuan",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_mobile/nestle/tuan",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_mobile",
+			"/Users/Sinri/Codes/Leqee/weishop/wxshop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/wxshop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/wxshop_api",
+			"/Users/Sinri/Codes/Leqee/weishop/weishop_api",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"target_category_id",
+			"qdo",
+			"18",
+			"SinriPDO",
+			"deploy_level",
+			"^",
+			"\\t[\\d]+$",
+			"tracking_numbers",
+			"facility_convert",
+			"BindTrackingAfterBPSN",
+			"time_start",
+			"microtime",
+			"request",
+			"party_limit",
+			"getPauseSyncTimeForShipping",
+			"catholicSyncDelivery",
+			"shipment_id",
+			"'SOCKS5 localhost:7070'",
+			",}",
+			"FindProxyForURLByAutoProxy",
+			"autoproxy_host",
+			"(1, *$)|([\\s'\":]+)",
+			"(1, *$)|([\\s':]+)",
+			"1, |[\\s':]+",
+			"[\\t]+",
+			"whitelist",
+			"SOCKS",
+			"blackhole_host",
+			"clear_all_files",
+			"setCellValueExplicit",
+			"getYTBTitle",
+			"result",
+			"Google_Service_YouTube_SearchListResponse",
+			"listSearch",
+			"search",
+			"add",
+			"excel",
+			"slave",
+			"insertTaobaoOrders",
+			"synctaobaoorder",
+			"this_order_can",
+			"scanOrdersForConfirmStep",
+			"not_merge",
+			"sendMail",
+			"sto_mail_applys",
+			"getTaobaoShopList",
+			"syncJdOrderSendDelivery",
+			"Start browsing through ",
+			"client",
+			"JSTUsername",
+			"html",
+			"taobao_delivery",
+			"client",
+			"carrier_id",
+			"sleep",
+			"html",
+			"order_list",
+			"facility_convert",
+			"html",
+			"codeMap",
+			" cc",
+			"SELECT COUNT( 1 ) AS cc",
+			"codeMap",
+			"pauseMap",
+			"pauseFacility",
+			"process_queries",
+			"mainrow",
+			"$types",
+			"_types",
+			"get_types_stat",
+			"_cellCollection",
+			"tr",
+			"mibunList",
+			"bbnHK.leqee.com",
+			"showGoodsList",
+			"配送仓123",
+			"配送仓123物理库存",
+			"function get_available_facility",
+			"facility_id",
+			"getList",
+			"die",
+			"authHeader",
+			"In our system cannot get the target order correctly",
+			"65553",
+			"available_pages",
+			"countArray",
+			"Index_Librorum_Prohibitorum",
+			"countArray",
+			"check_admin_user_priv",
+			"parseAccessInfoFromCookie",
+			"adminChangePassword",
+			"doCardPlain0",
+			"checkCard",
+			"cbCreateOrderForManeuvers",
+			"getOrder",
+			"cbShowOrderShipping",
+			"updateUserWxInfo",
+			"findTemporaryUserList",
+			"updateUserWxInfo",
+			"findTemporaryUserList",
+			"viewPageStatReport",
+			"doCardPlain0",
+			"getCardInfo",
+			"checkCard",
+			",",
+			"CN",
+			"checkCard",
+			"getCardInfo",
+			"doCardPlain0",
+			"getUserCardCodeRecord",
+			"holdUserCard",
+			"updateSkuEvent",
+			"updateSku",
+			"addNewGoods",
+			"getGoodsInfo",
+			"getGoodsDetail",
+			"getOrderList",
+			"getOrderDetail",
+			"getOrderList",
+			"cbShowOrderList",
+			"wechatUserInfoGrabAction",
+			"findRefundInfoByOrderId",
+			"getOrderDetail",
+			"cbShowOrderDetail",
+			"getCurrentUserInfo",
+			"must_exist",
+			"query(",
+			"refundApplyByCustomer"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"pdo",
+			"'",
+			"',",
+			",",
+			"autoproxy",
+			"}",
+			" ",
+			"",
+			"th",
+			"',",
+			"'CN",
+			";",
+			"=",
+			"",
+			"nestle",
+			",",
+			"nestle",
+			",",
+			"",
+			",",
+			"/^[0-9]+(\\.[0-9]+)?$/",
+			"ws_",
+			"&gt;",
+			"&lt;",
+			"getWeishopAccessToken",
+			"shipping_template_detail_id",
+			"shipping_template_id",
+			"shipping_template_name",
+			"shipping_template_id",
+			"class Goods",
+			"",
+			"ShopList",
+			"\\\"",
+			" ",
+			"\\\\u",
+			"\\u",
+			"\"",
+			"",
+			"\\",
+			"\"",
+			"','',0,NOW(),NOW());",
+			"g','',0,NOW(),NOW());",
+			"insert into `water`.`water_shop`(`shop_id`, `shop_name`, `tel`, `address_detail`,`avatar`, `address_title`,  `score`, `create_time`, `update_time`)values(NULL,'",
+			"','",
+			"",
+			"\"cvmain\"",
+			"\" target=\"main\">",
+			"</a></p>",
+			"<p><a",
+			"",
+			">\n<",
+			"\" target=\"content_frame\">",
+			"</a>\n</p>",
+			"</p>\n<p>",
+			"</p><p>",
+			"\" target =\"content_frame\" >",
+			"",
+			"p",
+			"</a>",
+			"<tr>\n<td",
+			"</td>\n<tr",
+			"</td>\n<td",
+			"$",
+			"div_id_copy_button",
+			" ",
+			"",
+			" ",
+			"",
+			"\n",
+			"\"",
+			"$is_debug_off",
+			"$group_no",
+			"/express/",
+			"\"=>\"",
+			"is_require_service_call_party($line['party_id'])",
+			"is_require_service_call_party",
+			"th"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 13,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "CategoryAgency.php",
+					"settings":
+					{
+						"buffer_size": 7022,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1144,
+								1144
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1040.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "FileEdit.php",
+					"settings":
+					{
+						"buffer_size": 7310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2071,
+								2071
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1237.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/MeinBlogGeneral.css",
+					"settings":
+					{
+						"buffer_size": 4099,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								990,
+								990
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 730.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "model/MBCategory.php",
+					"settings":
+					{
+						"buffer_size": 2041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								100,
+								100
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "library/MeinBlogSession.php",
+					"settings":
+					{
+						"buffer_size": 1191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1000,
+								1000
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "library/MeinBlog.php",
+					"settings":
+					{
+						"buffer_size": 1549,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								143,
+								143
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "index.php",
+					"settings":
+					{
+						"buffer_size": 5803,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5538,
+								5538
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2475.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "FileView.php",
+					"settings":
+					{
+						"buffer_size": 7258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6809,
+								6809
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2189.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "UserRegister.php",
+					"settings":
+					{
+						"buffer_size": 2736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1039,
+								1039
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1054.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "css/Pager.css",
+					"settings":
+					{
+						"buffer_size": 4479,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26,
+								26
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "model/MBFileTag.php",
+					"settings":
+					{
+						"buffer_size": 963,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "model/MB_CREATION.sql",
+					"settings":
+					{
+						"buffer_size": 2547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1208,
+								1208
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "library/MeinBlogPDO.php",
+					"settings":
+					{
+						"buffer_size": 2756,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1328,
+								1328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 429.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "model/MBFileComment.php",
+					"settings":
+					{
+						"buffer_size": 1262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1170,
+								1170
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 239.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true
+}

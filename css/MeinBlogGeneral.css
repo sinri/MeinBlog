@@ -175,7 +175,7 @@ dd {
 textarea.form-control {
     height: auto;
 }
-
+/*
 input[type="text"],input[type="password"] {
 	display: inline-block;
     height: 15px;
@@ -189,7 +189,7 @@ input[type="text"],input[type="password"] {
     border-radius: 4px;
     vertical-align: middle;
 } 
-
+*/
 div.message_box {
 	width: 90%;
 	margin: 5px auto;

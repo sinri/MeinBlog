@@ -7,10 +7,15 @@ $sessionAgent=MeinBlogSession::sharedInstance();
 $userAgent=new MBUser();
 $fileListAgent=new MBFileList();
 
+$login_result=true;
+
 if('login'==MeinBlog::getRequest('act')){
 	$name=MeinBlog::getRequest('name');
 	$password=MeinBlog::getRequest('password');
-	$sessionAgent->login($name,$password);
+	$login_result=$sessionAgent->login($name,$password);
+	if($login_result!=false){
+		header("location: index.php");
+	}
 }elseif('logout'==MeinBlog::getRequest('act')){
 	$sessionAgent->logout();
 	header("location: index.php");
@@ -38,6 +43,9 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 	<link rel="stylesheet" type="text/css" href="css/MeinBlogGeneral.css">
 	<link rel="stylesheet" type="text/css" href="css/Pager.css">
 	<style type="text/css">
+	dl dt {
+		margin: 5px 0px;
+	}
 	div.left_div {
 		margin: 5px;
 		width: 74%;
@@ -168,6 +176,9 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 			<?php if(empty($user_id)){ ?>
 			<div class="widget_div" style="text-align:center;">
 				<h2>LOGIN</h2>
+				<?php if($login_result===false){ ?>
+				<p>Login Failed!</p>
+				<?php }?>
 				<form method="POST" id="login_form">
 					<dl class="dl-horizontal">
 						<dt>
@@ -196,9 +207,25 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 				<h2>USER</h2>
 				<p>Welcome, <?php echo $user_info['name']; ?>!</p>
 				<p>User Group: <?php echo $user_info['role']; ?></p>
+				<?php if($user_info['role'] == 'ADMIN' || $user_info['role'] == 'USER'){ ?>
 				<p>
 					<span class="btn_span"><a href="FileEdit.php" class="btn btn-full-width">Write New Blog</a></span>
 				</p>
+				<? } ?>
+				<?php if($user_info['role'] == 'ADMIN'){ ?>
+				<p>
+					<span class="btn_span"><a href="UserAgency.php" class="btn btn-full-width">Users</a></span>
+				</p>
+				<p>
+					<span class="btn_span"><a href="RegisterCodeAgency.php" class="btn btn-full-width">Register Codes</a></span>
+				</p>
+				<? }else{
+				?>
+				<p>
+					<span class="btn_span"><a href="UserAgency.php" class="btn btn-full-width">My User Info</a></span>
+				</p>
+				<?php
+				} ?>
 				<p>
 					<span class="btn_span"><a href="index.php?act=logout" class="btn btn-full-width">Logout</a></span>
 				</p>

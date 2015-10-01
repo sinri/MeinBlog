@@ -14,11 +14,7 @@ class MBUser extends MBBasicModel
 		$username=$this->pdo->quote($username);
 		$password=$this->pdo->quote($password);
 		$sql="SELECT 
-				`mb_user`.`user_id` -- ,
-			--     `mb_user`.`name`,
-			--     `mb_user`.`email`,
-			--     `mb_user`.`role`,
-			--     `mb_user`.`create_time`
+				`mb_user`.`user_id`
 			FROM `MeinBlog`.`mb_user`
 			WHERE (name={$username} OR email={$username}) AND password={$password}
 			LIMIT 1
@@ -30,8 +26,9 @@ class MBUser extends MBBasicModel
 	}
 
 	public function authEmailAndCode($email,$code){
-		//Not implemented.
-		return true;
+		//Not implemented. Should return role.
+		$RCAgent=new MBRegisterCode();
+		return $RCAgent->query($email,$code);
 	}
 
 	public function getUser($user_id){
@@ -120,6 +117,28 @@ class MBUser extends MBBasicModel
 				role={$role}
 			WHERE user_id={$user_id}
 			AND password={$old_password}
+		";
+		$afx=$this->pdo->exec($sql);
+		return $afx;
+	}
+
+	public function modify($user_id,$name,$email,$role,$password){
+		$user_id=$this->pdo->quote($user_id,PDO::PARAM_INT);
+		$name=$this->pdo->quote($name);
+		$email=$this->pdo->quote($email);
+		$role=$this->pdo->quote($role);
+		if(!empty($password)){
+			$password=$this->pdo->quote($password);
+			$password_sql="password={$password},";
+		}else{
+			$password_sql="";
+		}
+		$sql="UPDATE `MeinBlog`.`mb_user` 
+			SET name={$name},
+				{$password_sql}
+				email={$email},
+				role={$role}
+			WHERE user_id={$user_id}
 		";
 		$afx=$this->pdo->exec($sql);
 		return $afx;
