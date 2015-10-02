@@ -164,12 +164,12 @@ if(!empty($user_id) ){
 				$('#modify_user_form select[name="new_role"]').val(urole).trigger('change');
 				if(uid==1){
 					$('#modify_user_form select[name="new_role"]').attr("disabled",'disabled');
-					$('#modify_user_form input[name="new_name"]').attr("disabled",'disabled');
+					// $('#modify_user_form input[name="new_name"]').attr("disabled",'disabled');
 				}else{
 					$('#modify_user_form select[name="new_role"]').attr("disabled",false);
-					$('#modify_user_form input[name="new_name"]').attr("disabled",false);
+					// $('#modify_user_form input[name="new_name"]').attr("disabled",false);
 				}
-				$('#modify_user_form select[name="target_user_id"]').attr("disabled",'disabled');
+				// $('#modify_user_form select[name="target_user_id"]').attr("disabled",'disabled');
 				modify_user_form_switch('block');
 			}
 			</script>
@@ -194,15 +194,15 @@ if(!empty($user_id) ){
 				</p>
 				<p>
 					<label style="width:100px;display:inline-block;">New Name:</label>
-					<input name="new_name" value="">
-				</p>
-				<p>
-					<label style="width:100px;display:inline-block;">New Email:</label>
-					<input name="new_email" value="">
+					<input type="text" name="new_name" value="">
 				</p>
 				<p>
 					<label style="width:100px;display:inline-block;">New Password:</label>
-					<input name="new_password" value="">
+					<input type="password" name="new_password" value="">
+				</p>
+				<p>
+					<label style="width:100px;display:inline-block;">New Email:</label>
+					<input type="text" name="new_email" value="">
 				</p>
 				<p>
 					<label style="width:100px;display:inline-block;">Role:</label>
