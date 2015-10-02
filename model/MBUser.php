@@ -15,7 +15,7 @@ class MBUser extends MBBasicModel
 		$password=$this->pdo->quote($password);
 		$sql="SELECT 
 				`mb_user`.`user_id`
-			FROM `MeinBlog`.`mb_user`
+			FROM `mb_user`
 			WHERE (name={$username} OR email={$username}) AND password={$password}
 			LIMIT 1
 		";
@@ -39,7 +39,7 @@ class MBUser extends MBBasicModel
 			    `mb_user`.`email`,
 			    `mb_user`.`role`,
 			    `mb_user`.`create_time`
-			FROM `MeinBlog`.`mb_user`
+			FROM `mb_user`
 			WHERE user_id = {$user_id}
 			LIMIT 1
 		";
@@ -68,7 +68,7 @@ class MBUser extends MBBasicModel
 			    `mb_user`.`email`,
 			    `mb_user`.`role`,
 			    `mb_user`.`create_time`
-			FROM `MeinBlog`.`mb_user`
+			FROM `mb_user`
 			WHERE 1 {$con_sql}
 			ORDER BY `{$sort}` {$sort_order}
 		";
@@ -80,7 +80,7 @@ class MBUser extends MBBasicModel
 		$email=$this->pdo->quote($email);
 		$role=$this->pdo->quote($role);
 		$password=$this->pdo->quote($password);
-		$sql="INSERT INTO `MeinBlog`.`mb_user`
+		$sql="INSERT INTO `mb_user`
 			(
 				`user_id`,
 				`name`,
@@ -110,7 +110,7 @@ class MBUser extends MBBasicModel
 		$role=$this->pdo->quote($role);
 		$new_password=$this->pdo->quote($new_password);
 		$old_password=$this->pdo->quote($old_password);
-		$sql="UPDATE `MeinBlog`.`mb_user` 
+		$sql="UPDATE `mb_user` 
 			SET name={$name},
 				password={$new_password},
 				email={$email},
@@ -133,7 +133,7 @@ class MBUser extends MBBasicModel
 		}else{
 			$password_sql="";
 		}
-		$sql="UPDATE `MeinBlog`.`mb_user` 
+		$sql="UPDATE `mb_user` 
 			SET name={$name},
 				{$password_sql}
 				email={$email},

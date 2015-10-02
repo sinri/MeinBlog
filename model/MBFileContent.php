@@ -20,7 +20,7 @@ class MBFileContent extends MBBasicModel
 		$file_id=$this->pdo->quote($file_id,PDO::PARAM_INT);
 		$content=$this->pdo->quote($content);
 		$editor_id=$this->pdo->quote($editor_id,PDO::PARAM_INT);
-		$sql="INSERT INTO `MeinBlog`.`mb_file_content` (
+		$sql="INSERT INTO `mb_file_content` (
 			`file_id`,
 			`content`,
 			`editor_id`,
@@ -34,7 +34,7 @@ class MBFileContent extends MBBasicModel
 			NOW()
 		);
 		";
-		MeinBlog::log('MBFileContent.create.sql: '.$sql);
+		// MeinBlog::log('MBFileContent.create.sql: '.$sql);
 		$afx=$this->pdo->exec($sql);
 		return $afx;
 	}

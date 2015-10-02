@@ -30,6 +30,8 @@ class MBFileList extends MBBasicModel
 					$sql_con.=" AND fh.update_time =< ".$this->pdo->quote($value)." ";
 				}elseif($key=='category'){
 					$sql_con.=" AND fh.category_id = ".$this->pdo->quote($value,PDO::PARAM_INT);
+				}elseif($key=='abstract'){
+					$sql_con.=" AND fh.abstract LIKE CONCAT('%',".$this->pdo->quote($value).",'%') ";
 				}
 			}
 		}
@@ -57,6 +59,7 @@ class MBFileList extends MBBasicModel
 		    {$sql_open_level}
 		LIMIT {$limit} OFFSET {$offset}
         ";
+        // MeinBlog::log("MBFileList->getList()->sql: ".$sql);
         $list=$this->pdo->getAll($sql);
 
         $sql = "SELECT 
@@ -73,6 +76,57 @@ class MBFileList extends MBBasicModel
 		$page_count=ceil(1.0*$rows/$page_size);
 
         $file_header_array=array();
+        if(!empty($list)){
+        	foreach ($list as $item) {
+        		$file_header=new MBFileHeader($item);
+        		$file_header_array[]=$file_header;
+        	}
+        }
+
+        return $file_header_array;
+	}
+
+	public function search($keyword,$role='OUTSIDER',$limit=10,$offset=0){
+		$keyword=$this->pdo->quote($keyword);
+		$limit=$this->pdo->quote($limit,PDO::PARAM_INT);
+		$offset=$this->pdo->quote($offset,PDO::PARAM_INT);
+		$sql_open_level="";
+		if($role=='ADMIN'){
+			$sql_open_level=" AND (c.open_level is null or c.open_level in ('ADMIN','USER','GUEST','OUTSIDER')) ";
+		}elseif($role=='USER'){
+			$sql_open_level=" AND (c.open_level is null or c.open_level in ('USER','GUEST','OUTSIDER')) ";
+		}elseif($role=='GUEST'){
+			$sql_open_level=" AND (c.open_level is null or c.open_level in ('GUEST','OUTSIDER')) ";
+		}else{
+			$sql_open_level=" AND (c.open_level is null or c.open_level in ('OUTSIDER')) ";
+		}
+		$sql="SELECT 
+		    fh.*, c.category_name, u.name user_name, u.email user_email
+		FROM
+		    mb_file_header fh
+		        INNER JOIN
+		    mb_category c ON fh.category_id = c.category_id
+		        INNER JOIN
+		    mb_user u ON fh.main_editor_id = u.user_id
+		        INNER JOIN
+		    mb_file_content fc ON fc.file_id = fh.file_id
+		        INNER JOIN
+		    mb_file_tag ft ON ft.file_id = fh.file_id
+		WHERE
+			(
+		    fh.title LIKE CONCAT('%', {$keyword}, '%')
+		        OR fh.abstract LIKE CONCAT('%', {$keyword}, '%')
+		        OR c.category_name LIKE CONCAT('%', {$keyword}, '%')
+		        OR fc.content LIKE CONCAT('%', {$keyword}, '%')
+		        OR ft.tag LIKE CONCAT('%', {$keyword}, '%')
+		    )
+			{$sql_open_level}
+		GROUP BY fh.file_id
+		LIMIT {$limit} OFFSET {$offset}
+		";
+		// MeinBlog::log("MBFileList->search()->sql: ".$sql);
+		$list=$this->pdo->getAll($sql);
+		$file_header_array=array();
         if(!empty($list)){
         	foreach ($list as $item) {
         		$file_header=new MBFileHeader($item);

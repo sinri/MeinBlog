@@ -114,8 +114,16 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 	</div>
 	<div id="middle">
 		<div class="left_div">
-			<div>
-				<h2>FILES</h2>
+			<div style="width: 90%;">
+				<div class="left">
+					<h2>FILES</h2>
+				</div>
+				<div class="right" style="margin: 5px;">
+					<span class="btn_span">
+						<a href="FileSearch.php" class="btn">Search</a>
+					</span>
+				</div>
+				<div class="clear"></div>
 			</div>
 			<!-- HERE FILES -->
 			<div>

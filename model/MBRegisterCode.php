@@ -109,7 +109,7 @@ class MBRegisterCode extends MBBasicModel
 			$end_time='NULL';
 		}
 
-		$sql="INSERT INTO `MeinBlog`.`mb_register_code`
+		$sql="INSERT INTO `mb_register_code`
 		(
 			`rc_id`,
 			`object`,
@@ -128,9 +128,9 @@ class MBRegisterCode extends MBBasicModel
 			{$end_time}
 		)
 		";
-		MeinBlog::log("MBRegisterCode->insert($object,$code,$role,$start_time,$end_time)->sql: ".$sql);
+		// MeinBlog::log("MBRegisterCode->insert($object,$code,$role,$start_time,$end_time)->sql: ".$sql);
 		$rc_id=$this->pdo->insert($sql);
-		MeinBlog::log("MBRegisterCode->insert=".$rc_id);
+		// MeinBlog::log("MBRegisterCode->insert=".$rc_id);
 		return $rc_id;
 	}
 
@@ -150,7 +150,7 @@ class MBRegisterCode extends MBBasicModel
 			$end_time='NULL';
 		}
 
-		$sql="UPDATE `MeinBlog`.`mb_register_code` 
+		$sql="UPDATE `mb_register_code` 
 		SET 
 		    object = {$object},
 		    code = {$code},

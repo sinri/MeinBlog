@@ -32,7 +32,7 @@ class MBFileTag extends MBBasicModel
 		$file_id=$this->pdo->quote($file_id,PDO::PARAM_INT);
 		$tag=$this->pdo->quote($tag);
 		$editor_id=$this->pdo->quote($editor_id,PDO::PARAM_INT);
-		$sql="INSERT INTO `MeinBlog`.`mb_file_tag`
+		$sql="INSERT INTO `mb_file_tag`
 			(
 				`file_id`,
 				`tag`,

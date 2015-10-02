@@ -143,20 +143,25 @@ if(!empty($file_id)){
 					foreach ($comments as $comment) {
 				?>
 				<div class="comment_row" id="comment_row_for_id_<?php echo $comment['comment_id']; ?>">
-					<p>
-						[#<?php echo $comment['comment_id']; ?>]
-						<?php echo $comment['name']; ?> commented
-						<?php if(empty($comment['to_comment_id'])){
-							echo "this file";
-						} else{
-							echo "<a href='#comment_row_for_id_".$comment['to_comment_id']."'>[#".$comment['to_comment_id']."]</a>";
-						} ?>
-						on <?php echo $comment['create_time']; ?>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<?php if(!empty($user_id)){ ?>
-						<span class="btn_span"><a href="#new_comment_form" class="btn" onclick="requireReplyComment('<?php echo $comment['comment_id']; ?>');">Reply</a></span>
-						<?php } ?>
-					</p>
+					<div style="margin:5px">
+						<div class="left">
+							[#<?php echo $comment['comment_id']; ?>]
+							<?php echo $comment['name']; ?> commented
+							<?php if(empty($comment['to_comment_id'])){
+								echo "this file";
+							} else{
+								echo "<a href='#comment_row_for_id_".$comment['to_comment_id']."'>[#".$comment['to_comment_id']."]</a>";
+							} ?>
+							on <?php echo $comment['create_time']; ?>
+							<!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+						</div>
+						<div class="right">
+							<?php if(!empty($user_id)){ ?>
+							<span class="btn_span"><a href="#new_comment_form" class="btn" onclick="requireReplyComment('<?php echo $comment['comment_id']; ?>');">Reply</a></span>
+							<?php } ?>
+						</div>
+						<div class="clear"></div>
+					</div>
 					<p>
 						<?php echo $comment['content']; ?>
 					</p>
@@ -170,14 +175,19 @@ if(!empty($file_id)){
 				<form method="POST" id="new_comment_form">
 					<div>
 						<h3>Write Comment</h3>
-						<div style="margin: 5px 0px;">
-							<span id="to_comment_target">Comment this file with Markdown format content.</span>
-							&nbsp;&nbsp;&nbsp;&nbsp;
-							<!-- <button>Submit</button> -->
-							<span class="btn_span">
-								<a href="javascript:void(0);" class="btn" onclick="$('#new_comment_form').submit();">Submit</a>
-							</span>
-							<input type="hidden" name="to_comment_id" id="to_comment_id_input" value="0">
+						<div style="margin: 10px 0px;">
+							<div class="left">
+								<span id="to_comment_target">Comment this file with Markdown format content.</span>
+								<!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+							</div>
+							<div class="right">
+								<!-- <button>Submit</button> -->
+								<span class="btn_span">
+									<a href="javascript:void(0);" class="btn" onclick="$('#new_comment_form').submit();">Submit</a>
+								</span>
+								<input type="hidden" name="to_comment_id" id="to_comment_id_input" value="0">
+							</div>
+							<div class="clear"></div>
 						</div>
 					</div>
 					<div>

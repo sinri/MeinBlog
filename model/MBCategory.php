@@ -40,7 +40,7 @@ class MBCategory extends MBBasicModel
 	public function create($category_name,$open_level){
 		$category_name=$this->pdo->quote($category_name);
 		$open_level=$this->pdo->quote($open_level);
-		$sql="INSERT INTO `MeinBlog`.`mb_category` (
+		$sql="INSERT INTO `mb_category` (
 				`category_id`,
 				`category_name`,
 				`open_level`
@@ -66,12 +66,12 @@ class MBCategory extends MBBasicModel
 			$open_level=$this->pdo->quote($open_level);
 			$set_sqls[]=" open_level = ".$open_level." ";
 		}
-		$sql="UPDATE `MeinBlog`.`mb_category` SET ".implode(',', $set_sqls)." WHERE category_id=".$this->pdo->quote($category_id,PDO::PARAM_INT);
+		$sql="UPDATE `mb_category` SET ".implode(',', $set_sqls)." WHERE category_id=".$this->pdo->quote($category_id,PDO::PARAM_INT);
 		return $this->pdo->exec($sql);
 	}
 
 	public function delete($category_id){
-		$sql="DELETE FROM `MeinBlog`.`mb_category` WHERE category_id=".$this->pdo->quote($category_id,PDO::PARAM_INT);
+		$sql="DELETE FROM `mb_category` WHERE category_id=".$this->pdo->quote($category_id,PDO::PARAM_INT);
 		return $this->pdo->exec($sql);
 	}
 }

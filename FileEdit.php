@@ -183,7 +183,9 @@ if(empty($user_id)){
 				</h2>
 				<?php } ?>
 				<div class="span9">
+					Title:
 					<input type="text" class="form-control title_input" name="title" value="<?php echo $title; ?>" placeholder="Title">
+					Category:
 					<select class="form-control category_select" id="category" name="category" onchange="category_input_switch()">
 						<?php if(!empty($category_list)){
 							echo '<optgroup label="Existed Category">';
@@ -218,7 +220,8 @@ if(empty($user_id)){
 				<div class="clear"></div>
 				<div class="span12" style="margin: 10px 5px 10px 0px; width:100%">
 					<div class="span9">
-						<textarea class="form-control" style="height:22px" name="abstract" placeholder="Abstract in plain text"><?php echo $abstract; ?></textarea>
+						Abstract:
+						<textarea class="form-control" style="display:inline-block;height:22px; width:600px;" name="abstract" placeholder="Abstract in plain text"><?php echo $abstract; ?></textarea>
 					</div>
 					<div class="span3" style="text-align: right;">
 						<span class="btn_span">

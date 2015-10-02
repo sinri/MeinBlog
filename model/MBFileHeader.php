@@ -50,7 +50,7 @@ class MBFileHeader extends MBBasicModel
 					NOW()
 				);
 			";
-			MeinBlog::log("create file header sql: ".$sql);
+			// MeinBlog::log("create file header sql: ".$sql);
 			$file_id=$this->pdo->insert($sql);
 
 			if(empty($file_id)){
@@ -75,7 +75,7 @@ class MBFileHeader extends MBBasicModel
 	}
 
 	function update($file_id,$editor_id,$title=false,$abstract=false,$category_id=false,$content=false){
-		MeinBlog::log("update($file_id,$editor_id,$title=false,$abstract=false,$category_id=false,$content=false)");
+		// MeinBlog::log("update($file_id,$editor_id,$title=false,$abstract=false,$category_id=false,$content=false)");
 		if(empty($file_id) || empty($editor_id))return false;
 		$this->pdo->beginTransaction();
 		try {

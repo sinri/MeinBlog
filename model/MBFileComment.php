@@ -31,7 +31,7 @@ class MBFileComment extends MBBasicModel
 		$editor_id=$this->pdo->quote($editor_id,PDO::PARAM_INT);
 		$content=$this->pdo->quote($content);
 		$to_comment_id=$this->pdo->quote($to_comment_id,PDO::PARAM_INT);
-		$sql="INSERT INTO `MeinBlog`.`mb_file_comment`
+		$sql="INSERT INTO `mb_file_comment`
 			(
 				`comment_id`,
 				`file_id`,
