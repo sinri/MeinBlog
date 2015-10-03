@@ -20,6 +20,13 @@ class MeinBlogConfig
 		'db_scheme'=>'MeinBlog',
 		'db_username'=>'root',
 		'db_password'=>'123456',
+        // Language
+        'default_language'=>'en',
+
+        // MeinBlog Page Header
+        'MeinBlog_Title'=>'MeinBlog',
+        'MeinBlog_Subtitle'=>'A Simple Blog System in PHP',
+
 		// Depolyment: level as DEV, TEST, PROD, etc.
 		'deploy_level'=>'DEV',
 	);

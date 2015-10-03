@@ -92,7 +92,13 @@ if($user_id && $user_info){
 </head>
 <body>
 	<div id="header">
-		<h1>MeinBlog<br><small>A Simple Blog System in PHP</small></h1>
+		<h1>
+			<?php echo MeinBlog::getConfig()->property('MeinBlog_Title'); ?>
+			<br>
+			<small>
+				<?php echo MeinBlog::getConfig()->property('MeinBlog_Subtitle'); ?>
+			</small>
+		</h1>
 	</div>
 	<div id="middle">
 		<div class="left_div">
