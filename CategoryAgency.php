@@ -27,14 +27,14 @@ if($user_id && $user_info){
 			$c_open_level=MeinBlog::getRequest('new_open_level');
 
 			if(empty($c_id) || empty($c_name) || empty($c_open_level)){
-				$message="Please fill the required fields.";
+				$message=MeinBlog::lang('FORM_FIELDS_UNCOMPLETED','',true);//"Please fill the required fields.";
 			}
 			else{
 				$afx=$categoryAgent->update($c_id,$c_name,$c_open_level);
 				if(empty($afx)){
-					$message="Failed to save modification.";
+					$message=MeinBlog::lang('API_FAILED_SAVING','',true);//"Failed to save modification.";
 				}else{
-					$message="Saved modification.";
+					$message=MeinBlog::lang('API_DONE_SAVING','',true);//"Saved modification.";
 				}
 			}
 		}
@@ -105,10 +105,10 @@ if($user_id && $user_info){
 			<?php if(empty($user_id)){ ?>
 			<div class="message_box">
 				<h3>
-					Message:
+					<?php MeinBlog::lang('MSG_HEADER_TITLE'); ?>
 				</h3>
 				<p>
-					You have not logined into MeinBlog. Now directing to login...
+					<?php MeinBlog::lang('MSG_NOT_LOGINED_DIRECTING'); ?>
 				</p>
 				<script type="text/javascript">
 				function jump(){
@@ -121,7 +121,7 @@ if($user_id && $user_info){
 			<?php }else{ 
 			?>
 			<div>
-				<h2>Categories</h2>
+				<h2><?php MeinBlog::lang('CATEGORY_HEADER_CATEGORIES'); ?></h2>
 			<?php 
 				if(!empty($category_status_list)){
 					echo "<table>
@@ -162,10 +162,10 @@ if($user_id && $user_info){
 					if($isAdmin && !empty($category_status_list)){
 			?>
 			<div>
-				<h2>Modify Category</h2>
+				<h2><?php MeinBlog::lang('CATEGORY_HEADER_MODIFY'); ?></h2>
 				<?php if (!empty($message)) { ?>
 				<div class="message_box">
-					<h3>Message</h3>
+					<h3><?php MeinBlog::lang('MSG_HEADER_TITLE'); ?></h3>
 					<p><?php echo $message; ?></p>
 				</div>
 				<?php } ?>

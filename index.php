@@ -38,7 +38,7 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MeinBlog</title>
+	<title><?php echo MeinBlog::getConfig()->property('MeinBlog_Title'); ?></title>
 	<link rel="stylesheet" type="text/css" href="css/github.css">
 	<link rel="stylesheet" type="text/css" href="css/MeinBlogGeneral.css">
 	<link rel="stylesheet" type="text/css" href="css/Pager.css">
@@ -67,8 +67,6 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 		width: 90%;
 		margin: 5px;
 		padding: 5px;
-		/*border:2px solid;*/
-		/*border-radius:5px;*/
 	}
 	div.file_header_div{
 		height: auto;
@@ -122,22 +120,25 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 		<div class="left_div">
 			<div style="width: 90%;">
 				<div class="left">
-					<h2>FILES</h2>
+					<h2><?php MeinBlog::lang('INDEX_HEADER_FILES'); ?></h2>
 				</div>
 				<div class="right" style="margin: 5px;">
 					<span class="btn_span">
-						<a href="FileSearch.php" class="btn">Search</a>
+						<a href="FileSearch.php" class="btn"><?php MeinBlog::lang('INDEX_BUTTON_SEARCH'); ?></a>
 					</span>
 				</div>
 				<div class="clear"></div>
 			</div>
 			<!-- HERE FILES -->
 			<div>
-			<?php if(empty($fileheader_list)){
-				echo "<p>No Files Exist.</p>";
+			<?php 
+			if(empty($fileheader_list)){
+				echo "<p>";
+				MeinBlog::lang('FILES_NO_FILES');
+				echo "</p>";
 			}else{
 				foreach ($fileheader_list as $file_header) {
-			?>
+				?>
 				<div class="file_header_div">
 					<p class="file_header_title">
 						<code><?php MeinBlog::safeEmptyEcho($file_header->property('category_name'),'Default'); ?></code>
@@ -152,36 +153,39 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 						&nbsp;&nbsp;
 						<?php if($user_info['role']=='ADMIN' || $user_id==$file_header->property('main_editor_id')){ ?>
 						<span class="btn_span" style="padding: 3px 12px;">
-							<a class="btn" href="FileEdit.php?file_id=<?php echo $file_header->property('file_id'); ?>">Edit</a>
+							<a class="btn" href="FileEdit.php?file_id=<?php echo $file_header->property('file_id'); ?>"><?php MeinBlog::lang('INDEX_BUTTON_EDIT'); ?></a>
 						</span>
 						<?php } ?>
 					</p>
 					<blockquote class="file_header_abstract">
-						<?php MeinBlog::safeEmptyEcho($file_header->property('abstract'),'No abstract found.'); ?>
+						<?php MeinBlog::safeEmptyEcho($file_header->property('abstract'),MeinBlog::lang('ABSTRACT_NOT_FOUND','',true)); ?>
 					</blockquote>
 				</div>
-			<?php
+				<?php
 				}
-			} ?>
+			} 
+			?>
 			</div>	
 			<!-- PAGING -->
 			<div class="paging_div pagination">
 				<ul>
-				<?php if($pages>1){
+				<?php 
+				if($pages>1){
 					for ($page_id=max(1,$pages-5); $page_id <= min($pages,$page+5); $page_id++) { 
 						if($page_id==$page){
 							//this page
 							echo "<li><a href='javascript:void(0);' style='color:black'>{$page}</a></li>";
 						}else{
-				?>
+						?>
 				<li>
 					<a href="index.php?file_list_page=<?php echo $page_id; ?>"><?php echo $page_id; ?></a>
 				</li>
-				<?php
+						<?php
 						}
 					}
-				} ?>
-				<li><a href="javascript:void(0);" style='color:#c7254e;'> <?php echo $pages; ?> Pages</a></li>
+				} 
+				?>
+				<li><a href="javascript:void(0);" style='color:#c7254e;'> <?php printf(MeinBlog::lang('PAGES_TOTAL_N','',true),$pages); ?></a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -189,20 +193,24 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 		<div class="right_div">
 			<?php if(empty($user_id)){ ?>
 			<div class="widget_div" style="text-align:center;">
-				<h2>LOGIN</h2>
-				<?php if($login_result===false){ ?>
-				<p>Login Failed!</p>
-				<?php }?>
+				<h2><?php MeinBlog::lang('INDEX_HEADER_LOGIN'); ?></h2>
+				<?php 
+				if($login_result===false){ 
+					echo "<p>";
+					MeinBlog::lang('INDEX_LOGIN_FAILED');
+					echo "</p>";
+				} 
+				?>
 				<form method="POST" id="login_form">
 					<dl class="dl-horizontal">
 						<dt>
-							Username:
+							<?php MeinBlog::lang('INDEX_LABEL_USERNAME'); ?>:
 						</dt>
 						<dd>
 							<input type="text" name="name" style="width: 100px;">
 						</dd>
 						<dt>
-							Password:
+							<?php MeinBlog::lang('INDEX_LABEL_PASSWORD'); ?>:
 						</dt>
 						<dd>
 							<input type="password" name="password"  style="width: 100px;">
@@ -210,41 +218,47 @@ $fileheader_list=$fileListAgent->getList($conditions,$role,$page,$page_size,$pag
 					</dl>
 					<p>
 						<input type="hidden" name="act" value="login">
-						<span class="btn_span"><a href="UserRegister.php" class="btn">Register</a></span>
+						<span class="btn_span">
+							<a href="UserRegister.php" class="btn"><?php MeinBlog::lang('INDEX_BUTTON_REGISTER'); ?></a>
+						</span>
 						&nbsp;
-						<span class="btn_span"><a href="javascript:void(0);" class="btn" onclick="document.getElementById('login_form').submit()">Login</a></span>
+						<span class="btn_span">
+							<a href="javascript:void(0);" class="btn" onclick="document.getElementById('login_form').submit()"><?php MeinBlog::lang('INDEX_BUTTON_LOGIN'); ?></a>
+						</span>
 					</p>
 				</form>
 			</div>
-			<?php }else{ ?>
+			<?php }else{  ?>
 			<div class="widget_div" style="text-align:center;">
-				<h2>USER</h2>
-				<p>Welcome, <?php echo $user_info['name']; ?>!</p>
-				<p>User Group: <?php echo $user_info['role']; ?></p>
+				<h2><?php MeinBlog::lang('INDEX_HEADER_USER'); ?></h2>
+				<p><?php printf(MeinBlog::lang('WELCOME_USER','',true),$user_info['name']); ?></p>
+				<p><?php MeinBlog::lang('LABEL_USER_GROUP'); ?>: <?php MeinBlog::lang($user_info['role']); ?></p>
 				<?php if($user_info['role'] == 'ADMIN' || $user_info['role'] == 'USER'){ ?>
 				<p>
-					<span class="btn_span"><a href="FileEdit.php" class="btn btn-full-width">Write New Blog</a></span>
+					<span class="btn_span"><a href="FileEdit.php" class="btn btn-full-width"><?php MeinBlog::lang('INDEX_BUTTON_NEW_BLOG'); ?></a></span>
 				</p>
-				<? } ?>
+				<?php } ?>
 				<?php if($user_info['role'] == 'ADMIN'){ ?>
 				<p>
-					<span class="btn_span"><a href="UserAgency.php" class="btn btn-full-width">Users</a></span>
+					<span class="btn_span"><a href="UserAgency.php" class="btn btn-full-width"><?php MeinBlog::lang('INDEX_BUTTON_USERS'); ?></a></span>
 				</p>
 				<p>
-					<span class="btn_span"><a href="RegisterCodeAgency.php" class="btn btn-full-width">Register Codes</a></span>
+					<span class="btn_span"><a href="RegisterCodeAgency.php" class="btn btn-full-width"><?php MeinBlog::lang('INDEX_BUTTON_REGISTER_CODES'); ?></a></span>
 				</p>
-				<? }else{
+				<?php 
+					}else{
 				?>
 				<p>
-					<span class="btn_span"><a href="UserAgency.php" class="btn btn-full-width">My User Info</a></span>
+					<span class="btn_span"><a href="UserAgency.php" class="btn btn-full-width"><?php MeinBlog::lang('INDEX_BUTTON_MY_PROFILE'); ?></a></span>
 				</p>
-				<?php
-				} ?>
+				<?php } ?>
 				<p>
-					<span class="btn_span"><a href="index.php?act=logout" class="btn btn-full-width">Logout</a></span>
+					<span class="btn_span"><a href="index.php?act=logout" class="btn btn-full-width"><?php MeinBlog::lang('INDEX_BUTTON_LOGOUT'); ?></a></span>
 				</p>
 			</div>
-			<?php } ?>
+			<?php 
+			} 
+			?>
 			<div class="clear"></div>
 		</div>
 		<div class="clear"></div>

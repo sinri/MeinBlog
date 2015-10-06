@@ -8,6 +8,8 @@
 
 date_default_timezone_set('Asia/Shanghai');
 
+include_once(__DIR__.'/../files/MeinBlogLanguagePackage.php');
+
 include_once(__DIR__.'/MeinBlogConfig.php');
 include_once(__DIR__.'/MeinBlogLogger.php');
 include_once(__DIR__.'/MeinBlogPDO.php');
@@ -66,6 +68,19 @@ class MeinBlog
 			echo $default_for_empty;
 		}else{
 			echo $var;
+		}
+	}
+
+	public static function lang($string_id,$language='',$not_echo=false){
+		static $langAgent=null;
+		if($langAgent==null){
+			$langAgent=new MeinBlogLanguagePackage();
+		}
+		$str = $langAgent->getStringInLanguage($string_id,$language);
+		if($not_echo){
+			return $str;
+		}else{
+			echo $str;
 		}
 	}
 }
