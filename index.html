@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>MeinBlog by sinri</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">MeinBlog</h1>
+        <p class="header">A Simple Blog System in PHP</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/sinri/MeinBlog/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/sinri/MeinBlog/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/sinri/MeinBlog">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/sinri">sinri</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="meinblog" class="anchor" href="#meinblog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MeinBlog</h1>
+
+<p>A Simple Blog System in PHP</p>
+
+<h1>
+<a id="status" class="anchor" href="#status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Status</h1>
+
+<p>Version 1.0</p>
+
+<h1>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h1>
+
+<p>Make server and database ready. Apache + MySQL has been tested with. PHP version should be above 5.0.</p>
+
+<h2>
+<a id="database" class="anchor" href="#database" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Database</h2>
+
+<p>Prepare the SQL initialization file <code>MeinBlogDatabaseInit.sql</code> in <code>model</code> folder.</p>
+
+<p>Check if the default database name <code>MeinBlog</code> had been used. If used or you want to change it, you may need to edit the top set paramter <code>@dbname</code> to the target.</p>
+
+<pre><code>-- If you need to change database name, just modify the @dbname.
+SET @dbname='MeinBlog';
+</code></pre>
+
+<p>Then run the sql script in MySQL shell.</p>
+
+<h2>
+<a id="server" class="anchor" href="#server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server</h2>
+
+<p>Fork the project, or download a copy, to the server and place into certain path. This project could be deployed into a sub directory as sub-project, or if possible as an independent project.</p>
+
+<p>Edit <code>MeinBlogConfig.php</code>. Just replace the parameters with correct ones.</p>
+
+<pre><code>// Database: for PDO
+'db_host'=&gt;'127.0.0.1',
+'db_port'=&gt;'3306',
+'db_charset'=&gt;'utf8',
+'db_scheme'=&gt;'MeinBlog',
+'db_username'=&gt;'root',
+'db_password'=&gt;'123456',
+// Depolyment: level as DEV, TEST, PROD, etc.
+'deploy_level'=&gt;'DEV',
+</code></pre>
+
+<p>If vhost setting is needed, just do it.</p>
+
+<p>OK now should it be. Open your browser, and check your MeinBlog.</p>
+
+<h1>
+<a id="memo" class="anchor" href="#memo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Memo</h1>
+
+<p>Current version only supports English interface.</p>
+
+<p>The front end code is still somewhat ugly. Need time and power to improve.</p>
+
+<p>Everything provided under MIT licence. Free for using and free for changing, it would be graceful to let me know your improvement.</p>
+
+<h1>
+<a id="homepage" class="anchor" href="#homepage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Homepage</h1>
+
+<p>The homepage domain is <a href="http://meinblog.ga/">http://meinblog.ga/</a> after release.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
